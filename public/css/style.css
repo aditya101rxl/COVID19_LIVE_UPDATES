@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+body{
+    background:#161629!important;
+    font-family: sans-serif;
+}
+
+nav {
+height: 10vh;
+background: #5b78c7;
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+width: 50%;
+height: 100%;
+justify-content: space-around;
+align-items: center;
+margin-left: auto;
+}
+
+.nav-links li a {
+color: white;
+text-decoration: none;
+font-size: 16px;
+}
+
+.landing {
+height: 90vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+  
+@media screen and (max-width: 700px) {
+    .line {
+    width: 30px;
+    height: 3px;
+    background: white;
+    margin: 5px;
+    }
+    nav {
+    position: relative;
+    top: 0;
+    left: 0;
+    }
+
+    .hamburger {
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 20000;
+    }
+
+    .nav-links {
+    z-index: 1000;
+    position: fixed;
+    background: #5b78c7;
+    height: 100vh;
+    width: 53%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    transition: all 0.7s ease-out;
+    pointer-events: none;
+    }
+    .nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+    }
+    .nav-links li {
+    opacity: 0;
+    }
+    .nav-links li a {
+    font-size: 25px;
+    }
+    .nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.15s;
+    }
+    .nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.25s;
+    }
+    .nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.35s;
+    }
+    li.fade {
+    opacity: 1;
+    }
+}
+
+
+
+/* home page desinging */
+.max-width{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.home .max-width .arrow{
+    font-size: 40px;
+    color: crimson;
+    height: 30px;
+    text-align: center;
+}
+.home .max-width .arrow i{
+    animation: goDown 0.7s infinite;
+}
+@keyframes goDown {
+    0%   {color:red; margin-top: 2px;}
+    25%  {color:yellow; margin-top: 4px;}
+    50%  {color:blue; margin-top: 6px;}
+    75%  {color:green; margin-top: 8px;}
+    100% {color:red; margin-top: 10px;}
+}
+
+.home #regions_div{
+    width: 100%;
+    height: 300px;
+}
+.home .max-width .title{
+    font-size: 35px;
+    font-weight: 600;
+    margin: 2px 0;
+    color: beige;
+    text-align: center;
+}
+.home .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.home .cards .card{
+    width: 240px;
+    height: 200px;
+    margin: 1px 1px;
+    display: flex;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+}
+.home .card .data{
+    text-align: center;
+}
+.home .card .data h1{
+    font-size: 29px;
+}
+.home .confirmed:hover{
+    background-color:#331427;
+}
+.home .active:hover{
+    background-color:#132240;
+}
+.home .death:hover{
+    background-color:#212230;
+}
+.home .recovered:hover{
+    background-color: #182829;
+}
+
+
+.home .max-width .country .title{
+    margin: 22px 0;
+}
+.home .country{
+    color: beige;
+}
+.home .country .country-data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.home .country .country-data .left{
+    width: 100%;
+    height: auto;
+}
+.home .country .country-data .right{
+    width: 100%;
+    height: auto;
+}
+.home .country .country-data .right .card{
+    margin: 5px;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-out;
+}
+.home #axes_line_chart{
+    height: 400px;
+    width: 100%;
+}
+
+
+.news .headlines{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.news .headlines .media{
+    background-color: #212230;
+    margin: 12px 0;
+    display: flex;
+    border-radius: 32px;
+}
+.news .headlines .media img{
+    height: 200px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 25px;
+}
+.news .headlines .media .media-body h2{
+    font-size: 29px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.news .headlines .media .media-body p{
+    font-size: 20px;
+    font-weight: 500;
+    color: crimson;
+}
+.news .headlines .media .media-body a{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(235, 184, 184);
+    font-weight: 500;
+}
+.news .headlines .media .media-body a:hover{
+    color: crimson;
+}
+
+
+
+/* feedback-form */
+.feedback .write-feedback form .fields{
+    display: flex;
+}
+.feedback .write-feedback form .field,
+.feedback .write-feedback form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.feedback .write-feedback form .fields .name{
+    margin-right: 10px;
+}
+.feedback .write-feedback form .fields .email{
+    margin-left: 10px;
+}
+.feedback .write-feedback form .textarea{
+    height: 120px;
+}
+.feedback .write-feedback form .field input,
+.feedback .write-feedback form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    outline: none;
+    padding: 0 11px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+}
+.feedback .write-feedback form .textarea textarea{
+    resize: none;
+    padding-top: 10px;
+}
+.feedback .write-feedback form button{
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 5px 17px;
+    background: crimson;
+    border-radius: 13px;
+    border: 1px solid crimson;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+.feedback .write-feedback form button:hover{
+    background: none;
+    color: crimson;
+}
+
+/* footer section styling */
+footer{
+    background:#212230;
+    height: 100px;
+    width: 100%;
+}
+footer .ftr{
+    padding: 22px 0;
+    text-align: center;
+    color: whitesmoke;
+}
+footer .ftr span a{
+    color: crimson;
+}
+
+
+.social-icons{
+    display: block;
+}
+.social-icons i{
+    margin: 1px 5px;
+    font-size: 36px;
+}
+.social-icons .linkedIn{
+    color: #0059b4;
+    transition: all 0.3s ease-out;
+}
+.social-icons .linkedIn:hover{
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #0059b4;
+}
+.social-icons .instagram{
+    color: #ff003b;
+    transition: all 0.3s ease-out;
+}
+.social-icons .instagram:hover{
+    color: white;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color:  #ff003b;
+}
+.social-icons .facebook{
+    color: #1673c0;
+    transition: all 0.3s ease-out;
+}
+.social-icons .facebook:hover{
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #1673c0;
+}
+
+
+
+
+@media screen and (max-width: 700px){
+    .home .cards .card{
+        width: 150px;
+        height: 180px;
+    }
+    .max-width{
+        width: 100%;
+    }
+    .home .country .country-data{
+        flex-direction: column;
+    }
+    home .country .country-data .left {
+        width: 100%;
+    }
+    .home .country .country-data .right {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

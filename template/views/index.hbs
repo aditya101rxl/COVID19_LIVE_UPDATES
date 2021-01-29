@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>header}}
+
+<body>
+
+    {{>navbar}}
+
+
+
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="title">COVID19 - WORLD MAP</div>
+            <div id="regions_div">
+                <h1 style="text-align: center; color: crimson;">Loading...</h1>
+            </div>
+            <div class="arrow">
+                <i class='fas fa-angle-double-down'></i>
+            </div>
+            <div class="cards">
+                <div class="card confirmed" style="color: red;">
+                    <div class="data">
+                        <h2>confirmed</h2>
+                        <i class="fa fa-heart" style="font-size:38px;color:red;margin: 4px 0;"></i>
+                        <h1>...</h1>
+                    </div>
+                </div>
+                <div class="card active">
+                    <div class="data" style="color: #2828e7;">
+                        <h2>active</h2>
+                        <i class="fa fa-heart" style="font-size:38px;color: #2828e7;margin: 4px 0;"></i>
+                        <h1>...</h1>
+                    </div>
+                </div>
+                <div class="card recovered">
+                    <div class="data" style="color: green;">
+                        <h2>recovered</h2>
+                        <i class="fa fa-heart" style="font-size:38px;color: green;margin: 4px 0;"></i>
+                        <h1>...</h1>
+                    </div>
+                </div>
+                <div class="card death">
+                    <div class="data" style="color: gray;">
+                        <h2>death</h2>
+                        <i class="fa fa-heart" style="font-size:38px;color:gray;margin: 4px 0;"></i>
+                        <h1>...</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="country" id="country">
+                <div class="title"></div>
+                <p style="text-align: center; margin-top: -20px; margin-bottom: 20px;">click on above world map to change country stats.</p>
+                <div class="country-data">
+                    <div class="left">
+                        <div class="chart">
+                            <canvas id="axes_line_chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="cards right">
+                        <div class="card confirmed" style="color: red; margin: 13px 0;">
+                            <div class="data">
+                                <h2>confirmed</h2>
+                                <h3>...</h3>
+                                <h1>...</h1>
+                            </div>
+                        </div>
+                        <div class="card active">
+                            <div class="data" style="color: #2828e7; margin: 13px 0;">
+                                <h2>active</h2>
+                                <h3>...</h3>
+                                <h1>...</h1>
+                            </div>
+                        </div>
+                        <div class="card recovered">
+                            <div class="data" style="color: green; margin: 13px 0;">
+                                <h2>recovered</h2>
+                                <h3>...</h3>
+                                <h1>...</h1>
+                            </div>
+                        </div>
+                        <div class="card death">
+                            <div class="data" style="color: gray; margin: 13px 0;">
+                                <h2>death</h2>
+                                <h3>...</h3>
+                                <h1>...</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news" id="news">
+                <div class="title">COVID RELATED NEWS</div>
+                <div class="headlines" id="headlines">
+                    Loading....
+                </div>
+            </div>
+            <div class="feedback">
+                <div class="title">VIEWER'S FEEDBACK</div>
+                <div class="show-feedback">
+                    <h5 style="color: antiquewhite;">here ---></h5>
+                    {{#each feedbacks}}
+                        <h5 style="color: antiquewhite;">{{this.name}}</h5>
+                        <br>
+                    {{/each}}
+                </div>
+                <h1 style="color: antiquewhite;">write your feedback</h1>
+                <div class="write-feedback">
+                    <form action="/feedback" method="POST">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Name" name="name" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Email(kept private)" name="email" required>
+                            </div>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="7" placeholder="Write your feedback..." name="feedback" required
+                                spellcheck="true"></textarea>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit">Send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr style="background-color: crimson;">
+
+
+
+
+    {{>footer}}
+
+
+
+    <script src="https://kit.fontawesome.com/54392b258b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous">
+        </script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- script fill for goe chart  -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="js/countryData.js"></script>
+    <script src="js/javascript.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/worldMap.js"></script>
+</body>
+
+</html>
